@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+
+    "allowJs": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    
+    "moduleResolution": "node",
+  },
+  "include": [
+    "./index.d.ts",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "./dist/"
+  ]
+}
