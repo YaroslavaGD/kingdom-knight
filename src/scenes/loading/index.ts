@@ -1,4 +1,4 @@
-import { GameObjects, Scene } from "phaser";
+import { Scene } from "phaser";
 
 export class LoadingScene extends Scene {
 
@@ -8,13 +8,18 @@ export class LoadingScene extends Scene {
 
   preload(): void {
     this.load.baseURL = 'assets/';
-    //key: 'king'
-    //path from baseURL to file: 'sprites/king.png'
     this.load.image('king', 'sprites/king.png');
+    this.load.atlas('a-king', 'spritesheets/a-king.png', 'spritesheets/a-king_atlas.json');
+    
+    this.load.image({
+      key: 'tiles',
+      url: 'tilemaps/tiles/dungeon-16-16.png',
+    });
+    this.load.tilemapTiledJSON('dungeon', 'tilemaps/json/dungeon.json');
   }
 
   create(): void {
-    console.log('Loading scene was created');
     this.scene.start('level-1-scene');
   }
+
 }
